@@ -15,9 +15,15 @@ body {
 }
 
 #theme {
+    background-image: url("theme.png");
+    background-size: contain;
+    height: 35px;
+    width: 35px;
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 20px;
+    border: none;
 }
 
 .day-progress-container {
@@ -101,5 +107,4 @@ body {
     color: #dddbf3;
     border-radius: 20px;
     padding: 20px;
-
 }
