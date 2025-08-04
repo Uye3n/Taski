@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-$END$
+<div class="upper-container">
+    <button id="theme">O</button>
+    <div class="day-progress-container">
+        <div id="current-date">
+            <div class="weekday">Monday</div>
+            <div class="day">10</div>
+            <div class="month">October</div>
+        </div>
+        <div class="progress">
+            <div class="progress-title">Progress:</div>
+            <div class="progress-background">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="current-progress">
+                <div class="done-tasks">0</div>
+                <div id="slash">/</div>
+                <div class="total-tasks">2</div>
+                <div id="done">done</div>
+            </div>
+        </div>
+    </div>
+    <div class="task-input-container">
+        <input id="task-input" type="text" placeholder="Input your text!">
+        <button id="add-task-button">Add Task</button>
+    </div>
+</div>
+<div class="lower-container">
+    <div class="tasks-title">My Tasks:</div>
+    <!-- List of all tasks -->
+    <div class="task-container">
+        <input type="checkbox" id="task1" name="task"/>
+        <label for="task1">Write Essay</label><br>
+    </div>
+    <div class="task-container">
+        <input type="checkbox" id="task2" name="task"/>
+        <label for="task1">Programming</label><br>
+    </div>
+</div>
 </body>
 </html>

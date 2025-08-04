@@ -1,14 +1,25 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "start": "electron .",
     "build": "tsc"
   },
-  "dependencies": {},
   "devDependencies": {
+    "electron": "^37.2.5",
     "typescript": "^5.5.3"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uye3n/ToDo.git"
+  },
+  "author": "Sophie Pham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uye3n/ToDo/issues"
+  },
+  "homepage": "https://github.com/Uye3n/ToDo#readme",
+  "description": ""
 }
