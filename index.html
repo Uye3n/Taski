@@ -7,12 +7,19 @@
 </head>
 <body>
 <div class="upper-container">
-    <button id="theme"></button>
+    <button id="theme" aria-haspopup="true" aria-expanded="false"></button>
+    <div id="theme-menu" hidden role="menu">
+        <button data-theme="blue"  role="menuitem">Blue</button>
+        <button data-theme="pink"  role="menuitem">Pink</button>
+        <button data-theme="green"  role="menuitem">Green</button>
+        <button data-theme="purple"  role="menuitem">Purple</button>
+    </div>
+
     <div class="day-progress-container">
         <div id="current-date">
-            <div class="weekday">Monday</div>
-            <div class="day">10</div>
-            <div class="month">October</div>
+            <div id="weekday">Monday</div>
+            <div id="day">10</div>
+            <div id="month">October</div>
         </div>
         <div class="progress">
             <div class="progress-title">Progress:</div>
@@ -20,9 +27,9 @@
                 <div class="progress-fill"></div>
             </div>
             <div class="current-progress">
-                <div class="done-tasks">0</div>
+                <div class="done-tasks" id="done-tasks">0</div>
                 <div id="slash">/</div>
-                <div class="total-tasks">2</div>
+                <div class="total-tasks" id="total-tasks">0</div>
                 <div id="done">done</div>
             </div>
         </div>
@@ -32,17 +39,11 @@
         <button id="add-task-button">Add Task</button>
     </div>
 </div>
-<div class="lower-container">
+<div class="lower-container" id="lower-container">
     <div class="tasks-title">My Tasks:</div>
     <!-- List of all tasks -->
-    <div class="task-container">
-        <input type="checkbox" id="task1" name="task"/>
-        <label for="task1">Write Essay</label><br>
-    </div>
-    <div class="task-container">
-        <input type="checkbox" id="task2" name="task"/>
-        <label for="task1">Programming</label><br>
-    </div>
+
 </div>
+<script src="./dist/renderer.js"></script>
 </body>
 </html>

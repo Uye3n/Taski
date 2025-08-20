@@ -1,25 +1,53 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "description": "Simple Electron ToDo app",
+  "author": "Sophie Pham phamsophie10@gmail.com",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "npm run build && electron .",
+    "pack:mac": "npm run build && electron-builder -m",
+    "pack:win": "npm run build && electron-builder -w"
+  },
+  "build": {
+    "appId": "com.todo",
+    "productName": "Todo",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "index.html",
+      "style.css",
+      "theme-button-images/theme-blue.png",
+      "theme-button-images/theme-pink.png",
+      "theme-button-images/theme-green.png"
+    ],
+    "asar": true,
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.productivity",
+      "icon": "app-icon.ico"
+    }
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "electron": "^37.2.5",
-    "typescript": "^5.5.3"
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.9.2"
   },
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Uye3n/ToDo.git"
   },
-  "author": "Sophie Pham",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Uye3n/ToDo/issues"
   },
-  "homepage": "https://github.com/Uye3n/ToDo#readme",
-  "description": ""
+  "homepage": "https://github.com/Uye3n/ToDo#readme"
 }

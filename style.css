@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Press+Start+2P&display=swap');
 
+[data-theme="blue"] {
+    --font-white: #dddbf3;
+    --font-black: #030208;
+    --bg: #778ba4;
+    --box: #2a3a54;
+    --progress-bg: #566987;
+    --button-hover: #3d4d67;
+    --theme-img: url("theme-button-images/theme-blue.png");
+}
+
+[data-theme="pink"] {
+    --font-white: #fcedea;
+    --font-black: #030208;
+    --bg: #ffd9da;
+    --box: #eb8f9e;
+    --progress-bg: #eaa3b2;
+    --button-hover: #f1afbd;
+    --theme-img: url("theme-button-images/theme-pink.png");
+}
+
+[data-theme="green"] {
+    --font-white: #f9fff8;
+    --font-black: #030208;
+    --bg: #bbbe7c;
+    --box: #525938;
+    --progress-bg: #979a65;
+    --button-hover: #626b4a;
+    --theme-img: url("theme-button-images/theme-green.png");
+}
+
+[data-theme="purple"] {
+    --font-white: #e7e4de;
+    --font-black: #030208;
+    --bg: #aba5b1;
+    --box: #362b49;
+    --progress-bg: #8a869f;
+    --button-hover: #534272;
+    --theme-img: url("theme-button-images/theme-green.png");
+}
+
 * {
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
@@ -10,21 +50,48 @@
 body {
     width: auto;
     height: auto;
-    background-color: #778ba4;
+    background-color: var(--bg);
     padding: 20px;
 }
 
 #theme {
-    background-image: url("theme.png");
+    background-image: var(--theme-img);
+    background-color: var(--box);
     background-size: contain;
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 20px;
+    top: 28px;
+    right: 20px;
+    border-radius: 10px;
+    padding: 5px;
     border: none;
+    cursor: pointer;
 }
+
+#theme-menu {
+    position: absolute;
+    top: 54px; right: 20px;
+    background: var(--box);
+    border: 1px solid color-mix(in oklab, var(--box) 20%, transparent);
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+
+#theme-menu button {
+    display: block;
+    width: 140px;
+    text-align: left;
+    padding: 8px 10px;
+    background: transparent;
+    border: 0;
+    color: var(--font-white);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#theme-menu button:hover { background: color-mix(in oklab, var(--button-hover) 25%, transparent); }
 
 .day-progress-container {
     display: flex;
@@ -32,11 +99,11 @@ body {
 }
 
 #current-date {
-    background-color: #2a3a54;
-    color: #dddbf3;
+    background-color: var(--box);
+    color: var(--font-white);
     display: table-row;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
 }
 
@@ -51,7 +118,7 @@ body {
 }
 
 .progress-background {
-    background-color: #566987;
+    background-color: var(--progress-bg);
     height: 30px;
     width: 250px;
     margin-top: 10px;
@@ -59,7 +126,12 @@ body {
 }
 
 .progress-fill {
-    background-color: #2a3a54;
+    background-color: var(--box);
+    height: 100%;
+    width: 0;
+    display: block;
+    transition: width 400ms ease;
+    border-radius: 15px;
 }
 
 .current-progress {
@@ -67,7 +139,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    color: #030208;
+    color: var(--font-black);
 }
 
 .task-input-container {
@@ -77,22 +149,23 @@ body {
 }
 
 #task-input {
-    background-color: #dddbf3;
-    border: #2a3a54 2px solid;
+    background-color: var(--font-white);
+    border: var(--box) 2px solid;
     border-radius: 25px;
     padding: 10px;
 }
 
 #add-task-button {
-    background-color: #2a3a54;
-    color: #dddbf3;
+    background-color: var(--box);
+    color: var(--font-white);
     border: none;
     border-radius: 25px;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 #add-task-button:hover {
-    background-color: #3d4d67;
+    background-color: var(--button-hover);
 }
 
 .tasks-title {
@@ -101,10 +174,33 @@ body {
 }
 
 .task-container {
+    display: none;
+    position: relative;
     margin-top: 8px;
     margin-bottom: 8px;
-    background-color: #2a3a54;
-    color: #dddbf3;
+    background-color: var(--box);
+    color: var(--font-white);
     border-radius: 20px;
     padding: 20px;
+    gap: 20px;
+}
+
+.task-container label {
+    margin-left: 10px;
+}
+
+.clear-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear-task-button {
+    color: var(--font-white);
+    border: none;
+    background: none;
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 26%;
 }
