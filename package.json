@@ -1,5 +1,5 @@
 {
-  "name": "todo",
+  "name": "taski",
   "version": "1.0.0",
   "description": "Simple Electron ToDo app",
   "author": "Sophie Pham phamsophie10@gmail.com",
@@ -12,7 +12,7 @@
   },
   "build": {
     "appId": "com.todo",
-    "productName": "Todo",
+    "productName": "Taski",
     "directories": {
       "output": "release"
     },
@@ -31,7 +31,7 @@
         "zip"
       ],
       "category": "public.app-category.productivity",
-      "icon": "app-icon.ico"
+      "icon": "app-icon.icns"
     }
   },
   "devDependencies": {
@@ -40,10 +40,10 @@
     "electron-builder": "^26.0.12",
     "typescript": "^5.9.2"
   },
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Uye3n/ToDo.git"
+    "url": "git+https://github.com/Uye3n/Taski.git"
   },
   "license": "ISC",
   "bugs": {
